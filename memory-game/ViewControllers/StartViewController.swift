@@ -28,7 +28,6 @@ class StartViewController: UIViewController {
             if string.count > 2 {
                 performSegue(withIdentifier: "toMainSegue", sender: self)
             }
-            
         } else {
             // the string is nil...
         }

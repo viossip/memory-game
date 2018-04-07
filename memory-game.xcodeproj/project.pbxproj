@@ -21,6 +21,12 @@
 		D84F2C6920756C4A00F3CD27 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C6620756C4A00F3CD27 /* logo.png */; };
 		D84F2C6C207574CF00F3CD27 /* buttonStart.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C6A207574CE00F3CD27 /* buttonStart.png */; };
 		D84F2C6D207574CF00F3CD27 /* buttonWithBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C6B207574CF00F3CD27 /* buttonWithBorder.png */; };
+		D84F2C7D2078CB2B00F3CD27 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C782078CB2A00F3CD27 /* AboutViewController.swift */; };
+		D84F2C7E2078CB2B00F3CD27 /* HighscorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C792078CB2B00F3CD27 /* HighscorsViewController.swift */; };
+		D84F2C7F2078CB2B00F3CD27 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C7A2078CB2B00F3CD27 /* LevelViewController.swift */; };
+		D84F2C802078CB2B00F3CD27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */; };
+		D84F2C812078CB2B00F3CD27 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C7C2078CB2B00F3CD27 /* HelpViewController.swift */; };
+		D84F2C842078D10300F3CD27 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C832078D10300F3CD27 /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,12 @@
 		D84F2C6620756C4A00F3CD27 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		D84F2C6A207574CE00F3CD27 /* buttonStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonStart.png; sourceTree = "<group>"; };
 		D84F2C6B207574CF00F3CD27 /* buttonWithBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonWithBorder.png; sourceTree = "<group>"; };
+		D84F2C782078CB2A00F3CD27 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D84F2C792078CB2B00F3CD27 /* HighscorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscorsViewController.swift; sourceTree = "<group>"; };
+		D84F2C7A2078CB2B00F3CD27 /* LevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D84F2C7C2078CB2B00F3CD27 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		D84F2C832078D10300F3CD27 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,7 @@
 		D84F2C2D2075631400F3CD27 /* memory-game */ = {
 			isa = PBXGroup;
 			children = (
+				D84F2C822078D0E600F3CD27 /* Utilities */,
 				D84F2C602075632D00F3CD27 /* ViewControllers */,
 				D84F2C5F2075631F00F3CD27 /* Supported Files */,
 				D84F2C2E2075631400F3CD27 /* AppDelegate.swift */,
@@ -152,6 +165,11 @@
 		D84F2C602075632D00F3CD27 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D84F2C782078CB2A00F3CD27 /* AboutViewController.swift */,
+				D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */,
+				D84F2C7C2078CB2B00F3CD27 /* HelpViewController.swift */,
+				D84F2C792078CB2B00F3CD27 /* HighscorsViewController.swift */,
+				D84F2C7A2078CB2B00F3CD27 /* LevelViewController.swift */,
 				D84F2C302075631400F3CD27 /* StartViewController.swift */,
 				D84F2C61207563AD00F3CD27 /* MainViewController.swift */,
 			);
@@ -168,6 +186,14 @@
 				D84F2C6520756C4A00F3CD27 /* memoryLogo.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		D84F2C822078D0E600F3CD27 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D84F2C832078D10300F3CD27 /* Extentions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,8 +337,14 @@
 			files = (
 				D84F2C372075631400F3CD27 /* memory_game.xcdatamodeld in Sources */,
 				D84F2C312075631400F3CD27 /* StartViewController.swift in Sources */,
+				D84F2C842078D10300F3CD27 /* Extentions.swift in Sources */,
 				D84F2C2F2075631400F3CD27 /* AppDelegate.swift in Sources */,
+				D84F2C7F2078CB2B00F3CD27 /* LevelViewController.swift in Sources */,
+				D84F2C812078CB2B00F3CD27 /* HelpViewController.swift in Sources */,
+				D84F2C802078CB2B00F3CD27 /* GameViewController.swift in Sources */,
+				D84F2C7D2078CB2B00F3CD27 /* AboutViewController.swift in Sources */,
 				D84F2C62207563AD00F3CD27 /* MainViewController.swift in Sources */,
+				D84F2C7E2078CB2B00F3CD27 /* HighscorsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

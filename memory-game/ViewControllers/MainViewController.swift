@@ -9,6 +9,13 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    enum ButtonName: String {
+        case ButtonStartGame = "Start Game"
+        case ButtonHighscores = "HighScores"
+        case ButtonHelp = "Help"
+        case ButtonAbout = "About"
+    }
 
     @IBOutlet weak var nameLbl: UILabel!
     
@@ -18,16 +25,44 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         nameLbl.text! += nameStr + "!"
-        // Do any additional setup after loading the view.
+        for view in self.view.subviews as [UIView] {
+            if let btn = view as? UIButton {
+                btn.addTarget(self, action: #selector(startButtonPressed(_:)), for: .touchUpInside)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func startButtonPressed(_ button: UIButton) {
+        if let btnName = ButtonName(rawValue: (button.titleLabel?.text)!) {
+
+            switch btnName {
+            case .ButtonStartGame:
+                performSegue(withIdentifier: "toLevelSegue", sender: self)
+            case .ButtonHighscores:
+                exit(0);
+            case .ButtonHelp:
+                exit(0);
+            case .ButtonAbout:
+                exit(0);
+            default:
+                exit(0);
+            }
+
+        }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toLevelSegue"{
+            let destination = segue.destination as?  LevelViewController
+            destination?.nameStr = self.nameStr
+        }
+    }
+    
     @IBAction func exitBtn(_ sender: Any) {
         exit(0);
     }
-    
 }
