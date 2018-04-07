@@ -10,11 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    enum ButtonName: String {
-        case ButtonStartGame = "Start Game"
-        case ButtonHighscores = "HighScores"
-        case ButtonHelp = "Help"
-        case ButtonAbout = "About"
+    enum ButtonID: String {
+        case ButtonStartGame = "startGame"
+        case ButtonHighscores = "highscores"
+        case ButtonHelp = "help"
+        case ButtonAbout = "about"
+        case ButtonExit = "exitGame"
     }
 
     @IBOutlet weak var nameLbl: UILabel!
@@ -37,7 +38,8 @@ class MainViewController: UIViewController {
     }
     
     @objc func startButtonPressed(_ button: UIButton) {
-        if let btnName = ButtonName(rawValue: (button.titleLabel?.text)!) {
+
+        if let btnName = ButtonID(rawValue: button.restorationIdentifier!) {
 
             switch btnName {
             case .ButtonStartGame:

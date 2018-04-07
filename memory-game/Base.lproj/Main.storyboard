@@ -116,7 +116,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgp-a2-jDX">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="startGame" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgp-a2-jDX">
                                 <rect key="frame" x="16" y="316" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="DN3-gr-bei"/>
@@ -126,7 +126,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbd-jO-awB">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="highscores" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbd-jO-awB">
                                 <rect key="frame" x="16" y="416" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="dny-3o-GoF"/>
@@ -136,7 +136,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-F0-NVf">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="exitGame" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-F0-NVf">
                                 <rect key="frame" x="16" y="516" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="95g-MF-Y0n"/>
@@ -149,12 +149,12 @@
                                     <action selector="exitBtn:" destination="Dcu-AP-VCg" eventType="touchUpInside" id="e9J-tJ-mfL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6V-12-zTO">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="about" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6V-12-zTO">
                                 <rect key="frame" x="23" y="610.5" width="164" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="About" backgroundImage="buttonGreen.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldu-Ig-cH2">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="help" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldu-Ig-cH2">
                                 <rect key="frame" x="195" y="611" width="164" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="Ra0-Z7-ZR0"/>
