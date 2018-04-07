@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
         nameLbl.text! += nameStr + "!"
         for view in self.view.subviews as [UIView] {
             if let btn = view as? UIButton {
-                btn.addTarget(self, action: #selector(startButtonPressed(_:)), for: .touchUpInside)
+                btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
             }
         }
     }
@@ -37,11 +37,11 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func startButtonPressed(_ button: UIButton) {
+    @objc func buttonPressed(_ button: UIButton) {
 
-        if let btnName = ButtonID(rawValue: button.restorationIdentifier!) {
+        if let btnId = ButtonID(rawValue: button.restorationIdentifier!) {
 
-            switch btnName {
+            switch btnId {
             case .ButtonStartGame:
                 performSegue(withIdentifier: "toLevelSegue", sender: self)
             case .ButtonHighscores:

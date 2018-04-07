@@ -27,6 +27,10 @@
 		D84F2C802078CB2B00F3CD27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */; };
 		D84F2C812078CB2B00F3CD27 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C7C2078CB2B00F3CD27 /* HelpViewController.swift */; };
 		D84F2C842078D10300F3CD27 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C832078D10300F3CD27 /* Extentions.swift */; };
+		D84F2C872078FE6D00F3CD27 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C862078FE6D00F3CD27 /* GameLogic.swift */; };
+		D84F2C892078FE7E00F3CD27 /* Highscores.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C882078FE7E00F3CD27 /* Highscores.swift */; };
+		D84F2C8B2078FE9700F3CD27 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C8A2078FE9700F3CD27 /* Cell.swift */; };
+		D84F2C8D2078FEB600F3CD27 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C8C2078FEB600F3CD27 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D84F2C7C2078CB2B00F3CD27 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D84F2C832078D10300F3CD27 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		D84F2C862078FE6D00F3CD27 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		D84F2C882078FE7E00F3CD27 /* Highscores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highscores.swift; sourceTree = "<group>"; };
+		D84F2C8A2078FE9700F3CD27 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		D84F2C8C2078FEB600F3CD27 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 		D84F2C2D2075631400F3CD27 /* memory-game */ = {
 			isa = PBXGroup;
 			children = (
+				D84F2C852078FE5600F3CD27 /* Model */,
 				D84F2C822078D0E600F3CD27 /* Utilities */,
 				D84F2C602075632D00F3CD27 /* ViewControllers */,
 				D84F2C5F2075631F00F3CD27 /* Supported Files */,
@@ -192,8 +201,19 @@
 			isa = PBXGroup;
 			children = (
 				D84F2C832078D10300F3CD27 /* Extentions.swift */,
+				D84F2C8C2078FEB600F3CD27 /* Functions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D84F2C852078FE5600F3CD27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D84F2C862078FE6D00F3CD27 /* GameLogic.swift */,
+				D84F2C882078FE7E00F3CD27 /* Highscores.swift */,
+				D84F2C8A2078FE9700F3CD27 /* Cell.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,10 +356,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84F2C372075631400F3CD27 /* memory_game.xcdatamodeld in Sources */,
+				D84F2C872078FE6D00F3CD27 /* GameLogic.swift in Sources */,
 				D84F2C312075631400F3CD27 /* StartViewController.swift in Sources */,
+				D84F2C8D2078FEB600F3CD27 /* Functions.swift in Sources */,
 				D84F2C842078D10300F3CD27 /* Extentions.swift in Sources */,
 				D84F2C2F2075631400F3CD27 /* AppDelegate.swift in Sources */,
+				D84F2C8B2078FE9700F3CD27 /* Cell.swift in Sources */,
 				D84F2C7F2078CB2B00F3CD27 /* LevelViewController.swift in Sources */,
+				D84F2C892078FE7E00F3CD27 /* Highscores.swift in Sources */,
 				D84F2C812078CB2B00F3CD27 /* HelpViewController.swift in Sources */,
 				D84F2C802078CB2B00F3CD27 /* GameViewController.swift in Sources */,
 				D84F2C7D2078CB2B00F3CD27 /* AboutViewController.swift in Sources */,
