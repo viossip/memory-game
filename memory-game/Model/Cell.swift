@@ -7,8 +7,30 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
-class Card {
+class Cell : CustomStringConvertible {
     
+    var id:UUID = UUID.init()
+    var opened:Bool = false
+    var image:UIImage
 
+    init(image:UIImage) {
+        self.image = image
+    }
+    
+    init(cell:Cell) {
+        self.id = (cell.id as NSUUID).copy() as! UUID
+        self.opened = cell.opened
+        self.image = cell.image.copy() as! UIImage
+    }
+    
+    var description: String {
+        return "\(id.uuidString)"
+    }
+    
+    func equals(_ card: Cell) -> Bool {
+        return (card.id == id)
+    }
 }
+
