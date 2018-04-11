@@ -15,9 +15,9 @@ class CellViewController: UICollectionViewCell {
     
     fileprivate(set) var opened: Bool = false
     
-    var card: Cell? {
+    var cell: Cell? {
         didSet {
-            guard let cell = card else { return }
+            guard let cell = cell else { return }
             frontCell.image = cell.image
         }
     }

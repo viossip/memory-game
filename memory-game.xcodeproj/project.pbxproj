@@ -34,6 +34,7 @@
 		D84F2C8F207C814C00F3CD27 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C8E207C814C00F3CD27 /* CellViewController.swift */; };
 		D84F2C91207E351200F3CD27 /* bgMem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C90207E351200F3CD27 /* bgMem.jpg */; };
 		D84F2C93207E368400F3CD27 /* bgMem2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C92207E368400F3CD27 /* bgMem2.jpg */; };
+		D84F2C95207E95C300F3CD27 /* btnYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C94207E95C300F3CD27 /* btnYellow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		D84F2C8E207C814C00F3CD27 /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		D84F2C90207E351200F3CD27 /* bgMem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgMem.jpg; sourceTree = "<group>"; };
 		D84F2C92207E368400F3CD27 /* bgMem2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgMem2.jpg; sourceTree = "<group>"; };
+		D84F2C94207E95C300F3CD27 /* btnYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnYellow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 		D84F2C6320756BD700F3CD27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D84F2C94207E95C300F3CD27 /* btnYellow.png */,
 				D84F2C92207E368400F3CD27 /* bgMem2.jpg */,
 				D84F2C90207E351200F3CD27 /* bgMem.jpg */,
 				D84F2C6A207574CE00F3CD27 /* buttonStart.png */,
@@ -335,6 +338,7 @@
 				D84F2C91207E351200F3CD27 /* bgMem.jpg in Resources */,
 				D84F2C3C2075631400F3CD27 /* LaunchScreen.storyboard in Resources */,
 				D84F2C6C207574CF00F3CD27 /* buttonStart.png in Resources */,
+				D84F2C95207E95C300F3CD27 /* btnYellow.png in Resources */,
 				D84F2C93207E368400F3CD27 /* bgMem2.jpg in Resources */,
 				D84F2C392075631400F3CD27 /* Assets.xcassets in Resources */,
 				D84F2C6920756C4A00F3CD27 /* logo.png in Resources */,

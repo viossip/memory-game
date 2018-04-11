@@ -10,8 +10,8 @@ import Foundation
 import UIKit.UIImage
 
 protocol GameLogicDelegate {
-    func game(_ game: GameLogic, openCells cards: [Cell])
-    func game(_ game: GameLogic, closeCells cards: [Cell])
+    func game(_ game: GameLogic, openCells cells: [Cell])
+    func game(_ game: GameLogic, closeCells cells: [Cell])
     func gameDidStart(_ game: GameLogic)
     func gameDidEnd(_ game: GameLogic, elapsedTime: TimeInterval)
 }
@@ -56,6 +56,10 @@ class  GameLogic{
         cells.removeAll()
         cellsOpened.removeAll()
         startTime = nil
+    }
+    
+    func pouseGame() {
+        // TODO: Implement
     }
     
     func didSelectCell(_ cell: Cell?) {
