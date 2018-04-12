@@ -430,12 +430,9 @@
                                     <constraint firstAttribute="width" secondItem="DBe-F0-XYw" secondAttribute="height" multiplier="49:18" id="WXS-2W-ax7"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.20000000000000001" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZMy-F2-tJ9">
-                                <rect key="frame" x="16" y="217" width="343" height="333"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="333" id="yrn-YH-GBU"/>
-                                </constraints>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZMy-F2-tJ9">
+                                <rect key="frame" x="16" y="217" width="343" height="331.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="foo-Ms-Uyi">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -443,17 +440,17 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="itemCell" reuseIdentifier="cell" id="44r-5d-SFA" customClass="CellViewController" customModule="memory_game" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="itemCell" id="44r-5d-SFA" customClass="CellViewController" customModule="memory_game" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="frontCell" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-Og-Hnd">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellBg" translatesAutoresizingMaskIntoConstraints="NO" id="f7G-HV-VAK" userLabel="image">
                                                     <rect key="frame" x="5" y="5" width="40" height="40"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f7G-HV-VAK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="frontCell" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-Og-Hnd" userLabel="image">
                                                     <rect key="frame" x="5" y="5" width="40" height="40"/>
                                                 </imageView>
                                             </subviews>
@@ -478,6 +475,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="3sA-RO-Xtg" id="fbn-uu-YiO"/>
+                                    <outlet property="delegate" destination="3sA-RO-Xtg" id="87f-2e-2P4"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier=" endGame" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-W3-y83">
                                 <rect key="frame" x="16" y="154" width="153" height="45"/>
@@ -511,7 +512,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPH-Il-Cio">
-                                <rect key="frame" x="197" y="562" width="170" height="30"/>
+                                <rect key="frame" x="197" y="560.5" width="170" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -573,6 +574,7 @@
         <image name="buttonGreen.png" width="500" height="136"/>
         <image name="buttonStart.png" width="318" height="318"/>
         <image name="buttonWithBorder.png" width="478" height="136"/>
+        <image name="cellBg" width="335" height="335"/>
         <image name="logo.png" width="200" height="200"/>
         <image name="memoryLogo.png" width="464" height="217"/>
     </resources>

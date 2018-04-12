@@ -6,7 +6,7 @@
 //  Copyright © 2018 Vitaly. All rights reserved.
 //
 
-import UIKit
+import UIKit.UICollectionViewCell
 
 class CellViewController: UICollectionViewCell {
 

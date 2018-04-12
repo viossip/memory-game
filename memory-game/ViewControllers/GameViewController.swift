@@ -18,7 +18,7 @@ enum ButtonID: String {
     case ButtonStart = "startGame"
 }
 
-class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, GameLogicDelegate {
+class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, GameLogicDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var playBtn: UIButton!
@@ -26,7 +26,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     var level = Level.Easy
-    var game = GameLogic()
+    var gameCnt = GameLogic()
     var timer:Timer?
     let TileMargin = CGFloat(5.0)
     
@@ -42,14 +42,14 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         }
         
-        game.delegate = self
+        gameCnt.delegate = self
         resetGame()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        if game.isPlaying {
+        if gameCnt.isPlaying {
             resetGame()
         }
     }
@@ -59,12 +59,12 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func setupNewGame() {
-        let cellsData:[UIImage] = GameLogic.defaultCardImages
-        game.newGame(cellsData)
+        let cellsData:[UIImage] = GameLogic.defaultCellImages
+        gameCnt.newGame(cellsData)
     }
     
     func resetGame() {
-        game.stopGame()
+        gameCnt.stopGame()
         if timer?.isValid == true {
             timer?.invalidate()
             timer = nil
@@ -75,10 +75,16 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
     }
     
-    func pouseGame() {
-        game.pouseGame()
+    func pauseGame() {
+        gameCnt.pauseGame()
         //  TODO: Implement
-        playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
+        //playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
+    }
+    
+    func resumeGame() {
+        gameCnt.resumeGame()
+        //  TODO: Implement
+        //playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -90,18 +96,18 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CellViewController
-        itemCell.openCell(false, animted: false)
-        guard let cell = game.cellAtIndex(indexPath.item) else { return itemCell }
-        itemCell.cell = cell
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! CellViewController
+        item.openCell(false, animted: false)
+        guard let cell = gameCnt.cellAtIndex(indexPath.item) else { return item }
+        item.cell = cell
         
-        return itemCell
+        return item
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let itemCell = collectionView.cellForItem(at: indexPath) as! CellViewController
-        if itemCell.opened { return }
-        game.didSelectCell(itemCell.cell)
+        let item = collectionView.cellForItem(at: indexPath) as! CellViewController
+        if item.opened { return }
+        gameCnt.didSelectCell(item.cell)
         
         collectionView.deselectItem(at: indexPath, animated:true)
     }
@@ -111,29 +117,29 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         return CGSize(width: itemWidth, height: itemWidth)
     }
     
-    func gameDidStart(_ game: GameLogic) {
+    func gameLogicDidStart(_ game: GameLogic) {
         collectionView.reloadData()
         collectionView.isUserInteractionEnabled = true
     }
     
-    func game(_ game: GameLogic, openCells cells: [Cell]) {
+    func gameLogic(_ game: GameLogic, openCells cells: [Cell]) {
         for cell in cells {
-            guard let index = game.indexOfCell(cell) else { continue }
+            guard let index = gameCnt.indexOfCell(cell) else { continue }
             let itemCell = collectionView.cellForItem(at: IndexPath(item: index, section:0)) as! CellViewController
             itemCell.openCell(true, animted: true)
         }
     }
     
-    func game(_ game: GameLogic, closeCells cells: [Cell]) {
+    func gameLogic(_ game: GameLogic, closeCells cells: [Cell]) {
         for cell in cells {
-            guard let index = game.indexOfCell(cell) else { continue }
+            guard let index = gameCnt.indexOfCell(cell) else { continue }
             let itemCell = collectionView.cellForItem(at: IndexPath(item: index, section:0)) as! CellViewController
             itemCell.openCell(false, animted: true)
         }
     }
     
     
-    func gameDidEnd(_ game: GameLogic, elapsedTime: TimeInterval) {
+    func gameLogicDidEnd(_ game: GameLogic, elapsedTime: TimeInterval) {
         timer?.invalidate()
         
         //  TODO: Save results
@@ -146,15 +152,16 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             switch btnId {
             case .ButtonNew:
                 setupNewGame()
-                playBtn.setTitle(NSLocalizedString("Pouse", comment: "pouse"), for: UIControlState())
+                playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
             case .ButtonEnd:
                 dismiss(animated: true, completion: nil)
             case .ButtonStart:
-                if game.isPlaying {
-                    pouseGame()
+                if gameCnt.isPlaying {
+                    pauseGame()
                     playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
                 } else {
-                    
+                    resumeGame()
+                    playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
                 }
             }
         }

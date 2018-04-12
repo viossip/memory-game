@@ -29,8 +29,8 @@ class Cell : CustomStringConvertible {
         return "\(id.uuidString)"
     }
     
-    func equals(_ card: Cell) -> Bool {
-        return (card.id == id)
+    func equals(_ cell: Cell) -> Bool {
+        return (cell.id == id)
     }
 }
 

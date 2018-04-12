@@ -10,10 +10,10 @@ import Foundation
 import UIKit.UIImage
 
 protocol GameLogicDelegate {
-    func game(_ game: GameLogic, openCells cells: [Cell])
-    func game(_ game: GameLogic, closeCells cells: [Cell])
-    func gameDidStart(_ game: GameLogic)
-    func gameDidEnd(_ game: GameLogic, elapsedTime: TimeInterval)
+    func gameLogic(_ game: GameLogic, openCells cells: [Cell])
+    func gameLogic(_ game: GameLogic, closeCells cells: [Cell])
+    func gameLogicDidStart(_ game: GameLogic)
+    func gameLogicDidEnd(_ game: GameLogic, elapsedTime: TimeInterval)
 }
 
 class  GameLogic{
@@ -25,10 +25,15 @@ class  GameLogic{
     fileprivate var cellsOpened:[Cell] = [Cell]()
     fileprivate var startTime:Date?
     
-    static var defaultCardImages:[UIImage] = [
-        UIImage(named: "mem1")!, UIImage(named: "mem2")!, UIImage(named: "mem3")!, UIImage(named: "mem4")!,
-        UIImage(named: "mem5")!, UIImage(named: "mem6")!, UIImage(named: "mem7")!, UIImage(named: "mem8")!,
-        UIImage(named: "mem9")!, UIImage(named: "mem10")!
+    static var defaultCellImages:[UIImage] = [
+        UIImage(named: "mem1")!,
+        UIImage(named: "mem2")!,
+        UIImage(named: "mem3")!,
+        UIImage(named: "mem4")!,
+        UIImage(named: "mem5")!,
+        UIImage(named: "mem6")!,
+        UIImage(named: "mem7")!,
+        UIImage(named: "mem8")!
     ];
     
     var numberOfCells: Int {
@@ -47,7 +52,7 @@ class  GameLogic{
     func newGame(_ cellsData:[UIImage]) {
         isPlaying = true
         cells = randomCells(cellsData)
-        delegate?.gameDidStart(self)
+        delegate?.gameLogicDidStart(self)
         startTime = Date.init()
     }
     
@@ -58,25 +63,30 @@ class  GameLogic{
         startTime = nil
     }
     
-    func pouseGame() {
+    func pauseGame() {
+        // TODO: Implement
+    }
+    
+    func resumeGame() {
         // TODO: Implement
     }
     
     func didSelectCell(_ cell: Cell?) {
         guard let cell = cell else { return }
         
-        delegate?.game(self, openCells: [cell])
+        delegate?.gameLogic(self, openCells: [cell])
         
         if unpairedCellShown() {
             let unpaired = unpairedCell()!
             if cell.equals(unpaired) {
                 cellsOpened.append(cell)
             } else {
-                let unpairedCard = cellsOpened.removeLast()
+                
+                let unpairedCell = cellsOpened.removeLast()
                 
                 let delayTime = DispatchTime.now() + Double( Int64( 1 * Double(NSEC_PER_SEC ))) / Double( NSEC_PER_SEC )
                 DispatchQueue.main.asyncAfter(deadline: delayTime) {
-                    self.delegate?.game(self, closeCells:[cell, unpairedCard])
+                    self.delegate?.gameLogic(self, closeCells:[cell, unpairedCell])
                 }
             }
         } else {
@@ -90,7 +100,7 @@ class  GameLogic{
     
     fileprivate func finishGame() {
         isPlaying = false
-        delegate?.gameDidEnd(self, elapsedTime: elapsedTime)
+        delegate?.gameLogicDidEnd(self, elapsedTime: elapsedTime)
     }
     
     fileprivate func unpairedCell() -> Cell? {
