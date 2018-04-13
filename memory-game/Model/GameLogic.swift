@@ -21,6 +21,7 @@ class  GameLogic{
     var delegate: GameLogicDelegate?
     var cells:[Cell] = [Cell]()
     var isPlaying: Bool = false
+    var isPaused: Bool = false
     
     fileprivate var cellsOpened:[Cell] = [Cell]()
     fileprivate var startTime:Date?
@@ -47,6 +48,7 @@ class  GameLogic{
     
     func newGame(_ cellsData:[UIImage]) {
         isPlaying = true
+        isPaused = false; // TODO:
         cells = randomCells(cellsData)
         delegate?.gameLogicDidStart(self)
         startTime = Date.init()
@@ -61,10 +63,13 @@ class  GameLogic{
     
     func pauseGame() {
         // TODO: Implement
+        isPaused = true;
+        
     }
     
     func resumeGame() {
         // TODO: Implement
+        isPaused = false;
     }
     
     func didSelectCell(_ cell: Cell?) {

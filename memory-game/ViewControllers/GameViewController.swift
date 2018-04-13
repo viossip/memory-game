@@ -29,6 +29,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var gameCnt = GameLogic()
     var timer:Timer?
     let TileMargin = CGFloat(5.0)
+    var initGame = true
     
     var NumberOfRows = 3
     var NumberOfColumns = 3
@@ -156,6 +157,11 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             case .ButtonEnd:
                 dismiss(animated: true, completion: nil)
             case .ButtonStart:
+                if(initGame){
+                    setupNewGame()
+                    initGame = false
+                    return
+                }
                 if gameCnt.isPlaying {
                     pauseGame()
                     playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
