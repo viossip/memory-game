@@ -24,7 +24,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var timeLbl: UILabel!
     
-    
+    var nameStr = "";
     var level = Level.Easy
     var gameCnt = GameLogic()
     var timer:Timer?
@@ -59,7 +59,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func setupNewGame() {
-        let cellsData:[UIImage] = GameLogic.defaultCellImages
+        let cellsData:[UIImage] = Array(GameLogic.defaultCellImages.prefix(level.rawValue*2))
         gameCnt.newGame(cellsData)
     }
     
@@ -92,7 +92,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 16
+        return 4 * level.rawValue
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

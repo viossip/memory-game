@@ -45,13 +45,13 @@ class MainViewController: UIViewController {
             case .ButtonStartGame:
                 performSegue(withIdentifier: "toLevelSegue", sender: self)
             case .ButtonHighscores:
-                exit(0);
+                print("Highscores")
             case .ButtonHelp:
-                exit(0);
+                print("Help")
             case .ButtonAbout:
-                exit(0);
+                print("About")
             default:
-                exit(0);
+                print("-----")
             }
 
         }

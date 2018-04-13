@@ -26,14 +26,10 @@ class  GameLogic{
     fileprivate var startTime:Date?
     
     static var defaultCellImages:[UIImage] = [
-        UIImage(named: "mem1")!,
-        UIImage(named: "mem2")!,
-        UIImage(named: "mem3")!,
-        UIImage(named: "mem4")!,
-        UIImage(named: "mem5")!,
-        UIImage(named: "mem6")!,
-        UIImage(named: "mem7")!,
-        UIImage(named: "mem8")!
+        UIImage(named: "mem1")!, UIImage(named: "mem2")!, UIImage(named: "mem3")!,
+        UIImage(named: "mem4")!, UIImage(named: "mem5")!, UIImage(named: "mem6")!,
+        UIImage(named: "mem7")!, UIImage(named: "mem8")!, UIImage(named: "mem9")!,
+        UIImage(named: "mem10")!
     ];
     
     var numberOfCells: Int {

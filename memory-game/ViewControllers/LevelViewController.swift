@@ -49,20 +49,21 @@ class LevelViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let pressedBrn: UIButton = sender as! UIButton
+        let destination = segue.destination as?  GameViewController
+        destination?.nameStr = self.nameStr
+        
         if let btnId = ButtonID(rawValue: pressedBrn.restorationIdentifier!) {
+            
             switch btnId{
                 
             case .ButtonEasy:
-                fallthrough
-                
+                destination?.level = Level.Easy
             case .ButtonMedium:
-                fallthrough
-                
+                destination?.level = Level.Medium
             case .ButtonHard:
-                print("---")
-                
+                destination?.level = Level.Hard
             default:
-                print("+++")
+                print("------")
             }
         }
     }
