@@ -45,11 +45,11 @@ class MainViewController: UIViewController {
             case .ButtonStartGame:
                 performSegue(withIdentifier: "toLevelSegue", sender: self)
             case .ButtonHighscores:
-                print("Highscores")
+                performSegue(withIdentifier: "toHighscoresSegue", sender: self)
             case .ButtonHelp:
-                print("Help")
+                performSegue(withIdentifier: "toHelpSegue", sender: self)
             case .ButtonAbout:
-                print("About")
+                performSegue(withIdentifier: "toAboutSegue", sender: self)
             default:
                 print("-----")
             }

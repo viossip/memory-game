@@ -18,4 +18,7 @@ class HighscorsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func returnBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

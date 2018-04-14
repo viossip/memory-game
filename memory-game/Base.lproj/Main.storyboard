@@ -215,8 +215,8 @@
                         <outlet property="nameLbl" destination="hui-Jv-TIj" id="ywt-Bo-vQU"/>
                         <segue destination="OhK-9c-0Wh" kind="show" identifier="toLevelSegue" id="i5n-YJ-ouH"/>
                         <segue destination="VPD-cc-EIK" kind="show" identifier="toHighscoresSegue" id="qAg-vc-luz"/>
-                        <segue destination="mhM-gg-zDr" kind="show" identifier="toHelpSegue" id="6G2-kg-7F0"/>
-                        <segue destination="5Qe-2g-csL" kind="show" identifier="toAboutSegue" id="3gm-x1-hb1"/>
+                        <segue destination="mhM-gg-zDr" kind="presentation" identifier="toHelpSegue" id="6G2-kg-7F0"/>
+                        <segue destination="5Qe-2g-csL" kind="presentation" identifier="toAboutSegue" id="3gm-x1-hb1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exp-Jc-Wfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -234,12 +234,28 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgMem2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZBc-Oy-33E">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="return" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-gc-pdz">
+                                <rect key="frame" x="35" y="567" width="305" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="XuJ-vs-cyV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Return" backgroundImage="buttonGreen.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnBtnPressed:" destination="5Qe-2g-csL" eventType="touchUpInside" id="k05-4D-X1i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dfX-gc-pdz" secondAttribute="bottom" constant="20" symbolic="YES" id="31y-rF-u0c"/>
                             <constraint firstItem="ZBc-Oy-33E" firstAttribute="height" secondItem="GYH-0o-QLb" secondAttribute="height" id="8iV-Jf-nTY"/>
                             <constraint firstItem="ZBc-Oy-33E" firstAttribute="leading" secondItem="GYH-0o-QLb" secondAttribute="leading" id="Cjg-GQ-7ad"/>
                             <constraint firstItem="ZBc-Oy-33E" firstAttribute="width" secondItem="GYH-0o-QLb" secondAttribute="width" id="SgK-gh-hKm"/>
+                            <constraint firstItem="dfX-gc-pdz" firstAttribute="width" secondItem="dfX-gc-pdz" secondAttribute="height" multiplier="75:16" constant="-70" id="hwg-bh-vWK"/>
+                            <constraint firstItem="dfX-gc-pdz" firstAttribute="centerX" secondItem="ZBc-Oy-33E" secondAttribute="centerX" id="pXw-bd-dXT"/>
                             <constraint firstItem="ZBc-Oy-33E" firstAttribute="bottom" secondItem="kxm-1C-zVU" secondAttribute="bottom" id="qeT-Qp-C3b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kxm-1C-zVU"/>
@@ -260,12 +276,28 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgMem2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fOb-Vh-vPC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="return" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RB1-CY-lTI">
+                                <rect key="frame" x="35" y="567" width="305" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="77i-61-0ng"/>
+                                    <constraint firstAttribute="width" secondItem="RB1-CY-lTI" secondAttribute="height" multiplier="75:16" constant="-70" id="ugC-Ve-7eL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Return" backgroundImage="buttonGreen.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnBtnPressed:" destination="mhM-gg-zDr" eventType="touchUpInside" id="Sw2-KH-4h0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fOb-Vh-vPC" firstAttribute="bottom" secondItem="7EO-UY-ZBf" secondAttribute="bottom" id="5hN-Q7-SQM"/>
                             <constraint firstItem="fOb-Vh-vPC" firstAttribute="height" secondItem="fvx-pk-qPq" secondAttribute="height" id="K3x-U6-KlQ"/>
+                            <constraint firstAttribute="bottom" secondItem="RB1-CY-lTI" secondAttribute="bottom" constant="20" symbolic="YES" id="Sb3-vH-RLo"/>
                             <constraint firstItem="fOb-Vh-vPC" firstAttribute="leading" secondItem="fvx-pk-qPq" secondAttribute="leading" id="VY1-bT-xBW"/>
+                            <constraint firstItem="RB1-CY-lTI" firstAttribute="centerX" secondItem="fOb-Vh-vPC" secondAttribute="centerX" id="tMO-1F-H8a"/>
                             <constraint firstItem="fOb-Vh-vPC" firstAttribute="width" secondItem="fvx-pk-qPq" secondAttribute="width" id="w0v-dD-RZW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7EO-UY-ZBf"/>
@@ -286,6 +318,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgMem2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NzO-Gd-pDG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="return" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlq-nl-goV">
+                                <rect key="frame" x="27" y="567" width="305" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="UzH-MC-xEe"/>
+                                    <constraint firstAttribute="width" secondItem="Vlq-nl-goV" secondAttribute="height" multiplier="75:16" constant="-70" id="cHp-l5-Sj4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Return" backgroundImage="buttonGreen.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnBtnPressed:" destination="VPD-cc-EIK" eventType="touchUpInside" id="zhY-FR-ujJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -293,6 +339,9 @@
                             <constraint firstItem="NzO-Gd-pDG" firstAttribute="height" secondItem="Tce-ba-UPf" secondAttribute="height" id="VSK-2m-pGm"/>
                             <constraint firstItem="NzO-Gd-pDG" firstAttribute="bottom" secondItem="cbH-M7-Zr6" secondAttribute="bottom" id="WIs-7e-UNs"/>
                             <constraint firstItem="NzO-Gd-pDG" firstAttribute="width" secondItem="Tce-ba-UPf" secondAttribute="width" id="YxR-ip-dsd"/>
+                            <constraint firstItem="Vlq-nl-goV" firstAttribute="leading" secondItem="NzO-Gd-pDG" secondAttribute="leading" constant="27" id="sFw-z6-xFR"/>
+                            <constraint firstItem="Vlq-nl-goV" firstAttribute="centerX" secondItem="NzO-Gd-pDG" secondAttribute="centerX" constant="-8" id="tE6-lv-5NW"/>
+                            <constraint firstAttribute="bottom" secondItem="Vlq-nl-goV" secondAttribute="bottom" constant="20" symbolic="YES" id="tYO-gX-eSG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cbH-M7-Zr6"/>
                     </view>
