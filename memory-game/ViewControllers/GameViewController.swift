@@ -31,7 +31,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var timer:Timer?
     var seconds = 0
-    var minutse = 0
+    var minutes = 0
     var timerStr = "Time: "
     
     var NumberOfRows = 3
@@ -65,7 +65,6 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setupNewGame() {
         let cellsData:[UIImage] = Array(GameLogic.defaultCellImages.prefix(level.rawValue*2))
         gameCnt.newGame(cellsData)
-        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
@@ -152,9 +151,16 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @objc func updateTimer(){
         seconds += 1
-        self.timeLbl.text! = timerStr + String(seconds)
-
         
+        if seconds == 60 {
+            minutes += 1
+        }
+        self.timeLbl.text! = timerStr + String(minutes) + " : " + String(seconds)
+    }
+    
+    func initTime(){
+        seconds = 0
+        minutes = 0
     }
     
     
@@ -163,6 +169,10 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             switch btnId {
             case .ButtonNew:
+                if timer != nil{
+                    timer?.invalidate()
+                    initTime()
+                }
                 setupNewGame()
                 playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
             case .ButtonEnd:
