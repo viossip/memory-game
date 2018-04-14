@@ -27,9 +27,12 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var nameStr = "";
     var level = Level.Easy
     var gameCnt = GameLogic()
-    var timer:Timer?
-    let TileMargin = CGFloat(5.0)
     var initGame = true
+    
+    var timer:Timer?
+    var seconds = 0
+    var minutse = 0
+    var timerStr = "Time: "
     
     var NumberOfRows = 3
     var NumberOfColumns = 3
@@ -62,6 +65,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setupNewGame() {
         let cellsData:[UIImage] = Array(GameLogic.defaultCellImages.prefix(level.rawValue*2))
         gameCnt.newGame(cellsData)
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     func resetGame() {
@@ -142,8 +147,14 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func gameLogicDidEnd(_ game: GameLogic, elapsedTime: TimeInterval) {
         timer?.invalidate()
-        
         //  TODO: Save results
+    }
+    
+    @objc func updateTimer(){
+        seconds += 1
+        self.timeLbl.text! = timerStr + String(seconds)
+
+        
     }
     
     
