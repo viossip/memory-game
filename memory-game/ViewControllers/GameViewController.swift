@@ -157,8 +157,35 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func gameLogicDidEnd(_ game: GameLogic, elapsedTime: TimeInterval) {
         timer?.invalidate()
         playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
-        print("-----------------\( elapsedTime)")
-        //  TODO: Save results
+        
+        let endGameAlert = UIAlertController(
+            title: NSLocalizedString("You Win!", comment: "title"),
+            message: String(format: "%@ \(Int(elapsedTime)) seconds and \(clicks) clicks", NSLocalizedString("You finished the game in", comment: "message")),
+            preferredStyle: .alert)
+        
+        let saveScore = UIAlertAction(title: NSLocalizedString("OK", comment: "Ok"), style: .default) { [weak self] (_) in
+            let nameTxt = endGameAlert.textFields![0] as UITextField
+            self?.resetGame()
+        }
+        saveScore.isEnabled = false
+        endGameAlert.addAction(saveScore)
+        
+        endGameAlert.addTextField { (textField) in
+            textField.placeholder = NSLocalizedString("Your name: \(self.nameStr)?", comment: "your name")
+            NotificationCenter.default.addObserver( forName: NSNotification.Name.UITextFieldTextDidChange,
+                                                    object: textField,
+                                                    queue: OperationQueue.main) {
+                                                        (notification) in
+                                                        saveScore.isEnabled = textField.text != ""
+            }
+        }
+        
+        let cancelSaving = UIAlertAction(title: NSLocalizedString("Dismiss", comment: "dismiss"), style: .cancel) { [weak self] (action) in
+            self?.resetGame()
+        }
+        endGameAlert.addAction(cancelSaving)
+        self.present(endGameAlert, animated: true) { }
+        playBtn.isEnabled = false
     }
     
     @objc func updateTimer(){
@@ -187,6 +214,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                     initTime()
                 }
                 setupNewGame()
+                playBtn.isEnabled = true
                 playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
             case .ButtonStart:
                 if(initGame){
@@ -208,7 +236,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                         notPaused = true
                     }
                 } else {
-                    
+                    initTime()
+                    timer = nil
                 }
             case .ButtonEnd:
 //                if let navController = self.navigationController {
