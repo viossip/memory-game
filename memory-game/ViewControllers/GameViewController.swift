@@ -70,7 +70,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setupNewGame() {
         let cellsData:[UIImage] = Array(GameLogic.defaultCellImages.prefix(level.rawValue*2))
         gameCnt.newGame(cellsData)
-        clicks = 0
+        clicks = 1
         clicksLbl?.text = clicksStr + String(clicks)
         timer?.invalidate()
         timer = nil

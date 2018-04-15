@@ -12,10 +12,11 @@ class StartViewController: UIViewController {
     
 
     @IBOutlet weak var nameTxt: UITextField!
+    @IBOutlet weak var errorMsg: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        errorMsg.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +32,7 @@ class StartViewController: UIViewController {
             } else if string.count > 2 &&  string.count < 10 {
                 performSegue(withIdentifier: "toMainSegue", sender: self)
             } else {
-                //  TODO: Error message...
+                errorMsg.isHidden = false
             }
         } else {
             // the string is nil...
