@@ -40,12 +40,15 @@ class StartViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMainSegue"{
-            if let destination = segue.destination as?  MainViewController{
-                destination.nameStr = nameTxt.text!
-                dismiss(animated: true, completion: nil)
-            }
-        }
+//        if segue.identifier == "toMainSegue"{
+//            if let destination = segue.destination as?  MainViewController{
+//                destination.nameStr = nameTxt.text!
+//                dismiss(animated: true, completion: nil)
+//            }
+//        }
+        let navVC = segue.destination as? UINavigationController
+        let mainVC = navVC?.viewControllers.first as! MainViewController
+        mainVC.nameStr = nameTxt.text!
     }
     
 }

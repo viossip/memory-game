@@ -610,6 +610,7 @@
                     <connections>
                         <outlet property="clicksLbl" destination="chG-7t-4Iz" id="kht-7T-Ff9"/>
                         <outlet property="collectionView" destination="ZMy-F2-tJ9" id="pcT-fd-0Ok"/>
+                        <outlet property="newGameBtn" destination="sGE-Vn-DAf" id="U6B-7L-cPs"/>
                         <outlet property="playBtn" destination="6RK-di-xer" id="aUT-0e-Zi7"/>
                         <outlet property="timeLbl" destination="aPH-Il-Cio" id="0zB-Cx-LUF"/>
                     </connections>

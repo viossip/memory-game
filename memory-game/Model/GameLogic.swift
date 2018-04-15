@@ -47,6 +47,15 @@ class  GameLogic{
         }
     }
     
+    var pausedTime : TimeInterval {
+        get {
+            guard startPauseTime != nil else { return -1 }
+            return Date().timeIntervalSince(startPauseTime!)
+        }
+    }
+    
+    var totalPaused : TimeInterval = 0.0
+    
     func newGame(_ cellsData:[UIImage]) {
         isPlaying = true
         isPaused = false; // TODO:
@@ -65,12 +74,14 @@ class  GameLogic{
     func pauseGame() {
         // TODO: Implement
         isPaused = true;
+        startPauseTime = Date.init()
         
     }
     
     func resumeGame() {
         // TODO: Implement
         isPaused = false;
+        totalPaused += pausedTime
     }
     
     func didSelectCell(_ cell: Cell?) {
@@ -102,7 +113,8 @@ class  GameLogic{
     
     fileprivate func finishGame() {
         isPlaying = false
-        delegate?.gameLogicDidEnd(self, elapsedTime: elapsedTime)
+        //elapsedTime = elapsedTime - totalPaused
+        delegate?.gameLogicDidEnd(self, elapsedTime: elapsedTime - totalPaused)
     }
     
     fileprivate func unpairedCell() -> Cell? {

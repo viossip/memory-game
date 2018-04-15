@@ -24,6 +24,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var clicksLbl: UILabel!
+    @IBOutlet weak var newGameBtn: UIButton!
     
     var nameStr = "";
     var level = Level.Easy
@@ -49,7 +50,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                 btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
             }
         }
-        
+        newGameBtn?.isEnabled = false
         gameCnt.delegate = self
         resetGame()
     }
@@ -69,9 +70,12 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setupNewGame() {
         let cellsData:[UIImage] = Array(GameLogic.defaultCellImages.prefix(level.rawValue*2))
         gameCnt.newGame(cellsData)
+        clicks = 0
+        clicksLbl?.text = clicksStr + String(clicks)
         timer?.invalidate()
         timer = nil
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        notPaused = true
     }
     
     func resetGame() {
@@ -115,7 +119,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = collectionView.cellForItem(at: indexPath) as! CellViewController
-        if item.opened { return }
+        if item.opened || !notPaused { return }
         gameCnt.didSelectCell(item.cell)
         self.clicksLbl.text! = clicksStr + String(clicks)
         clicks += 1
@@ -152,6 +156,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func gameLogicDidEnd(_ game: GameLogic, elapsedTime: TimeInterval) {
         timer?.invalidate()
         playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
+        print("-----------------\( elapsedTime)")
         //  TODO: Save results
     }
     
@@ -184,6 +189,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                 playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
             case .ButtonStart:
                 if(initGame){
+                    newGameBtn?.isEnabled = true
                     setupNewGame()
                     initGame = false
                     playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
