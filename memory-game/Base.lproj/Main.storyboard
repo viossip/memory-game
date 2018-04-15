@@ -102,7 +102,7 @@
                     </view>
                     <connections>
                         <outlet property="nameTxt" destination="Gk3-Sc-OCe" id="apy-ul-R5s"/>
-                        <segue destination="Dcu-AP-VCg" kind="show" identifier="toMainSegue" id="5A8-FC-dY1"/>
+                        <segue destination="Ruc-pu-3B4" kind="show" identifier="toMainSegue" id="5A8-FC-dY1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memoryLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-ez-X2h">
-                                <rect key="frame" x="16" y="20" width="343" height="196"/>
+                                <rect key="frame" x="16" y="64" width="343" height="152"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hui-Jv-TIj">
                                 <rect key="frame" x="16" y="266" width="343" height="30"/>
@@ -211,17 +211,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b4a-Ah-NlC"/>
                     </view>
+                    <navigationItem key="navigationItem" id="XZz-Fh-lbA"/>
                     <connections>
                         <outlet property="nameLbl" destination="hui-Jv-TIj" id="ywt-Bo-vQU"/>
                         <segue destination="OhK-9c-0Wh" kind="show" identifier="toLevelSegue" id="i5n-YJ-ouH"/>
-                        <segue destination="VPD-cc-EIK" kind="show" identifier="toHighscoresSegue" id="qAg-vc-luz"/>
+                        <segue destination="VPD-cc-EIK" kind="presentation" identifier="toHighscoresSegue" id="qAg-vc-luz"/>
                         <segue destination="mhM-gg-zDr" kind="presentation" identifier="toHelpSegue" id="6G2-kg-7F0"/>
                         <segue destination="5Qe-2g-csL" kind="presentation" identifier="toAboutSegue" id="3gm-x1-hb1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exp-Jc-Wfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="31.934032983508249"/>
+            <point key="canvasLocation" x="774" y="32"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="qbr-wn-tWi">
@@ -362,19 +363,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memoryLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="fbQ-gg-jcW">
-                                <rect key="frame" x="16" y="20" width="343" height="196"/>
+                                <rect key="frame" x="16" y="64" width="343" height="196"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196" id="VRI-un-gIc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=", Please choose a level:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY2-H6-9w7">
-                                <rect key="frame" x="16" y="263" width="343" height="33"/>
+                                <rect key="frame" x="16" y="307" width="343" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="easy" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ox-Dc-qDz">
-                                <rect key="frame" x="16" y="304" width="343" height="80"/>
+                                <rect key="frame" x="16" y="348" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="OEP-XQ-mP1"/>
                                 </constraints>
@@ -387,7 +388,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="medium" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-d6-LJr">
-                                <rect key="frame" x="16" y="392" width="343" height="80"/>
+                                <rect key="frame" x="16" y="436" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="5sT-Ub-7Nk"/>
                                 </constraints>
@@ -400,7 +401,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="hard" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HR-Pi-4XR">
-                                <rect key="frame" x="16" y="477" width="343" height="80"/>
+                                <rect key="frame" x="16" y="521" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="BE9-iL-alt"/>
                                 </constraints>
@@ -413,7 +414,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="return" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ff7-W9-Ih8">
-                                <rect key="frame" x="16" y="565" width="343" height="80"/>
+                                <rect key="frame" x="16" y="609" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="auf-KW-qYE"/>
                                 </constraints>
@@ -460,7 +461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QKx-WH-utU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528.8" y="31.934032983508249"/>
+            <point key="canvasLocation" x="1550" y="32"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Qeu-Ox-BG7">
@@ -474,7 +475,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memoryLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="DBe-F0-XYw">
-                                <rect key="frame" x="16" y="20" width="343" height="126"/>
+                                <rect key="frame" x="16" y="64" width="343" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DBe-F0-XYw" secondAttribute="height" multiplier="49:18" id="WXS-2W-ax7"/>
                                 </constraints>
@@ -614,7 +615,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldY-Ld-3oh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341.5999999999999" y="31.934032983508249"/>
+            <point key="canvasLocation" x="2311" y="32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hyy-dG-6Nl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ruc-pu-3B4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Um7-Rh-ljK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dcu-AP-VCg" kind="relationship" relationship="rootViewController" id="fnX-Yv-u2Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5KK-lf-3Y2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="-743"/>
         </scene>
     </scenes>
     <resources>

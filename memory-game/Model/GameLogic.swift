@@ -24,7 +24,8 @@ class  GameLogic{
     var isPaused: Bool = false
     
     fileprivate var cellsOpened:[Cell] = [Cell]()
-    fileprivate var startTime:Date?
+    fileprivate var startGameTime:Date?
+    fileprivate var startPauseTime:Date?
     
     static var defaultCellImages:[UIImage] = [
         UIImage(named: "mem1")!, UIImage(named: "mem2")!, UIImage(named: "mem3")!,
@@ -41,8 +42,8 @@ class  GameLogic{
     
     var elapsedTime : TimeInterval {
         get {
-            guard startTime != nil else { return -1 }
-            return Date().timeIntervalSince(startTime!)
+            guard startGameTime != nil else { return -1 }
+            return Date().timeIntervalSince(startGameTime!)
         }
     }
     
@@ -51,14 +52,14 @@ class  GameLogic{
         isPaused = false; // TODO:
         cells = randomCells(cellsData)
         delegate?.gameLogicDidStart(self)
-        startTime = Date.init()
+        startGameTime = Date.init()
     }
     
     func stopGame() {
         isPlaying = false
         cells.removeAll()
         cellsOpened.removeAll()
-        startTime = nil
+        startGameTime = nil
     }
     
     func pauseGame() {

@@ -40,7 +40,10 @@ class LevelViewController: UIViewController {
         
         if let btnId = ButtonID(rawValue: button.restorationIdentifier!) {
             if btnId == .ButtonReturn{
-                dismiss(animated: true, completion: nil)
+                //dismiss(animated: true, completion: nil)
+                if let navController = self.navigationController {
+                    navController.popViewController(animated: true)
+                }
             } else {
                 performSegue(withIdentifier: "toGameSegue", sender: button)
             }

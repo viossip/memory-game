@@ -154,6 +154,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if seconds == 60 {
             minutes += 1
+            seconds = 0;
         }
         self.timeLbl.text! = timerStr + String(minutes) + " : " + String(seconds)
     }
@@ -175,8 +176,6 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                 }
                 setupNewGame()
                 playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
-            case .ButtonEnd:
-                dismiss(animated: true, completion: nil)
             case .ButtonStart:
                 if(initGame){
                     setupNewGame()
@@ -190,6 +189,12 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                     resumeGame()
                     playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
                 }
+            case .ButtonEnd:
+//                if let navController = self.navigationController {
+//                    navController.popViewController(animated: true)
+//                }
+                //dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil) 
             }
         }
     }
