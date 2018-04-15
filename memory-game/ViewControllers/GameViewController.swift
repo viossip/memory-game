@@ -23,16 +23,20 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var clicksLbl: UILabel!
     
     var nameStr = "";
     var level = Level.Easy
     var gameCnt = GameLogic()
     var initGame = true
+    var notPaused = true
     
     var timer:Timer?
     var seconds = 0
     var minutes = 0
     var timerStr = "Time: "
+    var clicksStr = "Clicks: "
+    var clicks = 1
     
     var NumberOfRows = 3
     var NumberOfColumns = 3
@@ -65,6 +69,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setupNewGame() {
         let cellsData:[UIImage] = Array(GameLogic.defaultCellImages.prefix(level.rawValue*2))
         gameCnt.newGame(cellsData)
+        timer?.invalidate()
+        timer = nil
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
@@ -82,14 +88,12 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func pauseGame() {
         gameCnt.pauseGame()
-        //  TODO: Implement
-        //playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
+        timer?.invalidate()
     }
     
     func resumeGame() {
         gameCnt.resumeGame()
-        //  TODO: Implement
-        //playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -113,7 +117,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         let item = collectionView.cellForItem(at: indexPath) as! CellViewController
         if item.opened { return }
         gameCnt.didSelectCell(item.cell)
-        
+        self.clicksLbl.text! = clicksStr + String(clicks)
+        clicks += 1
         collectionView.deselectItem(at: indexPath, animated:true)
     }
     
@@ -146,6 +151,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func gameLogicDidEnd(_ game: GameLogic, elapsedTime: TimeInterval) {
         timer?.invalidate()
+        playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
         //  TODO: Save results
     }
     
@@ -180,21 +186,28 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                 if(initGame){
                     setupNewGame()
                     initGame = false
+                    playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
                     return
                 }
                 if gameCnt.isPlaying {
-                    pauseGame()
-                    playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
+                    if self.notPaused{
+                        pauseGame()
+                        playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
+                        notPaused = false
+                    }
+                    else{
+                        resumeGame()
+                        playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
+                        notPaused = true
+                    }
                 } else {
-                    resumeGame()
-                    playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
+                    
                 }
             case .ButtonEnd:
 //                if let navController = self.navigationController {
 //                    navController.popViewController(animated: true)
 //                }
-                //dismiss(animated: true, completion: nil)
-                self.dismiss(animated: true, completion: nil) 
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
