@@ -24,7 +24,8 @@ class LevelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chooseLvlLbl.text = nameStr + chooseLvlLbl.text!
+        chooseLvlLbl.text = "\(nameStr),"
+
         for view in self.view.subviews as [UIView] {
             if let btn = view as? UIButton {
                 btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)

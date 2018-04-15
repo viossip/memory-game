@@ -127,8 +127,9 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth: CGFloat = collectionView.frame.width / 4.0 - 15.0
-        return CGSize(width: itemWidth, height: itemWidth)
+        let itemWidth: CGFloat = collectionView.frame.width / CGFloat(Level.Medium.rawValue) - 12.0
+        let itemHeight: CGFloat = collectionView.frame.width / CGFloat(level.rawValue) - 12.0
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
     func gameLogicDidStart(_ game: GameLogic) {

@@ -10,8 +10,20 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    @IBOutlet weak var aboutTxt: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        aboutTxt.isEditable = false
+        aboutTxt.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        aboutTxt?.text = """
+        Vitaly Osipenkov
+        \nID: 324716448.
+        
+        \nIlya Shtukmuister
+        \nID: 309550325
+        """
     }
 
     override func didReceiveMemoryWarning() {
