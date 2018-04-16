@@ -31,6 +31,14 @@ class MainViewController: UIViewController {
                 btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
             }
         }
+        
+        nameLbl.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapOnName))
+        nameLbl.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func handleTapOnName(gestureRecognizer: UIGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
