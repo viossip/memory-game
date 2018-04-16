@@ -165,6 +165,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let saveScore = UIAlertAction(title: NSLocalizedString("OK", comment: "Ok"), style: .default) { [weak self] (_) in
             let nameTxt = endGameAlert.textFields![0] as UITextField
+            //  TODO: save name
             self?.resetGame()
         }
         saveScore.isEnabled = false
@@ -203,6 +204,38 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         minutes = 0
     }
     
+    @IBAction func endGamePressed(_ sender: Any) {
+        
+        if gameCnt.isPlaying {
+            if self.notPaused{
+                pauseGame()
+                playBtn.setTitle(NSLocalizedString("Play", comment: "play"), for: UIControlState())
+                notPaused = false
+            }
+        }
+        
+        let exitGameAlert = UIAlertController(
+            title: NSLocalizedString("Exit", comment: "title"),
+            message: String(format: "Are you sure?"),
+            preferredStyle: .alert)
+        
+        let exitOk = UIAlertAction(title: NSLocalizedString("OK", comment: "Ok"), style: .default) { [weak self] (_) in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        exitGameAlert.addAction(exitOk)
+        
+        let cancelExit = UIAlertAction(title: NSLocalizedString("Cancel", comment: "cancel"), style: .cancel) { [weak self] (action) in
+            if self!.notPaused {
+                self?.resumeGame()
+                self?.playBtn.setTitle(NSLocalizedString("Pause", comment: "pause"), for: UIControlState())
+                self?.notPaused = true
+            }
+        }
+        exitGameAlert.addAction(cancelExit)
+        self.present(exitGameAlert, animated: true) { }
+        //dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+    }
     
     @objc func buttonPressed(_ button: UIButton) {
         if let btnId = ButtonID(rawValue: button.restorationIdentifier!) {
@@ -240,10 +273,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
                     timer = nil
                 }
             case .ButtonEnd:
-//                if let navController = self.navigationController {
-//                    navController.popViewController(animated: true)
-//                }
-                self.dismiss(animated: true, completion: nil)
+                break
             }
         }
     }

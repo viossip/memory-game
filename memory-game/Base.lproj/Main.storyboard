@@ -132,7 +132,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memoryLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-ez-X2h">
-                                <rect key="frame" x="16" y="64" width="343" height="152"/>
+                                <rect key="frame" x="16" y="20" width="343" height="196"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hui-Jv-TIj">
                                 <rect key="frame" x="16" y="266" width="343" height="36"/>
@@ -435,12 +435,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memoryLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="fbQ-gg-jcW">
-                                <rect key="frame" x="16" y="64" width="343" height="196"/>
+                                <rect key="frame" x="16" y="20" width="343" height="196"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196" id="VRI-un-gIc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY2-H6-9w7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY2-H6-9w7">
                                 <rect key="frame" x="16" y="261" width="343" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -498,7 +498,7 @@
                                     <action selector="toMainBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OCK-H9-1AJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ws6-TS-hep">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please choose a level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ws6-TS-hep">
                                 <rect key="frame" x="35.5" y="297" width="305" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -556,13 +556,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memoryLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="DBe-F0-XYw">
-                                <rect key="frame" x="16" y="64" width="343" height="112"/>
+                                <rect key="frame" x="16" y="20" width="343" height="112"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DBe-F0-XYw" secondAttribute="height" multiplier="49:18" constant="38.111111111111086" id="WXS-2W-ax7"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZMy-F2-tJ9">
-                                <rect key="frame" x="16" y="234" width="343" height="332.5"/>
+                                <rect key="frame" x="16" y="190" width="343" height="376.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="foo-Ms-Uyi">
                                     <size key="itemSize" width="50" height="50"/>
@@ -634,7 +634,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier=" endGame" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-W3-y83">
-                                <rect key="frame" x="16" y="181" width="153" height="45"/>
+                                <rect key="frame" x="16" y="137" width="153" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="L0L-W3-y83" secondAttribute="height" multiplier="343:80" constant="-39.937499999999972" id="QOi-RO-ot4"/>
                                     <constraint firstAttribute="height" constant="45" id="rzu-kM-qFB"/>
@@ -643,9 +643,12 @@
                                 <state key="normal" title="End Game" backgroundImage="buttonGreen.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="endGamePressed:" destination="3sA-RO-Xtg" eventType="touchUpInside" id="upZ-aj-XOb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="newGame" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGE-Vn-DAf">
-                                <rect key="frame" x="206" y="181" width="153" height="45"/>
+                                <rect key="frame" x="206" y="137" width="153" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sGE-Vn-DAf" secondAttribute="height" multiplier="17:5" id="K8X-0h-3YK"/>
                                 </constraints>
@@ -704,10 +707,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Hyy-dG-6Nl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ruc-pu-3B4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Ruc-pu-3B4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Um7-Rh-ljK">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
