@@ -65,6 +65,19 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func exitBtn(_ sender: Any) {
-        exit(0);
+        let exitGameAlert = UIAlertController(
+            title: NSLocalizedString("Exit", comment: "title"),
+            message: String(format: "Are you sure?"),
+            preferredStyle: .alert)
+        
+        let exitOk = UIAlertAction(title: NSLocalizedString("OK", comment: "Ok"), style: .default) { [weak self] (_) in
+            exit(0);
+        }
+        exitGameAlert.addAction(exitOk)
+        
+        let cancelExit = UIAlertAction(title: NSLocalizedString("Cancel", comment: "cancel"), style: .cancel) { [weak self] (action) in }
+        exitGameAlert.addAction(cancelExit)
+        self.present(exitGameAlert, animated: true) { }
+        
     }
 }

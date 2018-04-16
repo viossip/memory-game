@@ -113,6 +113,7 @@
                     <connections>
                         <outlet property="errorMsg" destination="opu-5p-cZF" id="OuZ-2h-Sz3"/>
                         <outlet property="nameTxt" destination="Gk3-Sc-OCe" id="apy-ul-R5s"/>
+                        <outlet property="startBtn" destination="PtJ-yI-4od" id="03V-aH-wrl"/>
                         <segue destination="Ruc-pu-3B4" kind="show" identifier="toMainSegue" id="5A8-FC-dY1"/>
                     </connections>
                 </viewController>
