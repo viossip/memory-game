@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     enum ButtonID: String {
         case ButtonStartGame = "startGame"
         case ButtonHighscores = "highscores"
-        case ButtonHelp = "help"
+        case ButtonCustomize = "customize"
         case ButtonAbout = "about"
         case ButtonExit = "exitGame"
     }
@@ -54,8 +54,8 @@ class MainViewController: UIViewController {
                 performSegue(withIdentifier: "toLevelSegue", sender: self)
             case .ButtonHighscores:
                 performSegue(withIdentifier: "toHighscoresSegue", sender: self)
-            case .ButtonHelp:
-                performSegue(withIdentifier: "toHelpSegue", sender: self)
+            case .ButtonCustomize:
+                performSegue(withIdentifier: "toCustomizeSegue", sender: self)
             case .ButtonAbout:
                 performSegue(withIdentifier: "toAboutSegue", sender: self)
             default:

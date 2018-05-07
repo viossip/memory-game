@@ -18,6 +18,14 @@ class AboutViewController: UIViewController {
         aboutTxt.isEditable = false
         aboutTxt.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         aboutTxt?.text = """
+        
+        Turn over any two cards.
+        \nIf the two cards match, they will be keeped.
+        \nIf they don't match, they will turn back over.
+        \nRemember what was on each card and where it was!
+        
+        \nThe game is over when all the cards have been matched.
+        
         Vitaly Osipenkov
         \nID: 324716448.
         
