@@ -50,7 +50,13 @@ class CustomizeViewController: UITableViewController, UIImagePickerControllerDel
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        //  TODO: set imgs
+
+        let label: UILabel = cell.textLabel as! UILabel
+        label.textAlignment = .right
+        label.text = String(format: "Cell %d", indexPath.row+1)
+        
+        let imageView: UIImageView = cell.imageView as! UIImageView
+        imageView.image = cells[indexPath.row]
         
         return cell
     }
@@ -96,7 +102,7 @@ class CustomizeViewController: UITableViewController, UIImagePickerControllerDel
         self.present(alert, animated: true) { }
     }
 
-    fileprivate func promptImageURL() {
+    private func promptImageURL() {
         let alert = UIAlertController(title: NSLocalizedString("Enter Image URL:", comment: ""), message: nil, preferredStyle: .alert)
 
         let enterUrl = UIAlertAction(title: NSLocalizedString("Load", comment: ""), style: .default) { [weak self] (_) in
@@ -119,12 +125,12 @@ class CustomizeViewController: UITableViewController, UIImagePickerControllerDel
             }
         }
 
-        let cancel = UIAlertAction(title: NSLocalizedString("Dismiss", comment: "dismiss"), style: .cancel) { (action) in }
+        let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: "cancel"), style: .cancel) { (action) in }
         alert.addAction(cancel)
         self.present(alert, animated: true) { }
     }
 
-    fileprivate func loadImage(_ url: URL) {
+    private func loadImage(_ url: URL) {
         UIImage.downloadImage(url) { [weak self] (image: UIImage?) -> Void in
             guard let image = image else { return }
             self?.changeCell((self?.selIndexPath!.row)!, image: image)

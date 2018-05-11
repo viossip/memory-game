@@ -351,30 +351,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l0l-OT-i9s" id="byN-jK-GHq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellBg" translatesAutoresizingMaskIntoConstraints="NO" id="cFx-zC-s9A">
-                                                    <rect key="frame" x="299" y="-1" width="55" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="cFx-zC-s9A" secondAttribute="height" multiplier="5:4" id="Vgb-FH-GUf"/>
-                                                        <constraint firstAttribute="width" constant="55" id="qxe-TW-6OT"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0B-C1-g8y">
-                                                    <rect key="frame" x="10" y="1" width="42" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f0B-C1-g8y" secondAttribute="trailing" constant="20" symbolic="YES" id="6jE-Ck-Yjv"/>
-                                                <constraint firstItem="f0B-C1-g8y" firstAttribute="leading" secondItem="byN-jK-GHq" secondAttribute="leading" constant="10" id="Agq-X2-3sK"/>
-                                                <constraint firstItem="cFx-zC-s9A" firstAttribute="centerY" secondItem="byN-jK-GHq" secondAttribute="centerY" id="NCO-R9-fjz"/>
-                                                <constraint firstItem="f0B-C1-g8y" firstAttribute="height" secondItem="byN-jK-GHq" secondAttribute="height" id="bUd-Ir-KU4"/>
-                                                <constraint firstAttribute="trailing" secondItem="cFx-zC-s9A" secondAttribute="trailing" constant="21" id="mGa-oI-9eA"/>
-                                                <constraint firstItem="f0B-C1-g8y" firstAttribute="centerY" secondItem="byN-jK-GHq" secondAttribute="centerY" id="rMc-TB-MYp"/>
-                                                <constraint firstItem="cFx-zC-s9A" firstAttribute="height" secondItem="byN-jK-GHq" secondAttribute="height" id="ubD-aF-H62"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
