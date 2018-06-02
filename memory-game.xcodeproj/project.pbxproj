@@ -25,7 +25,6 @@
 		D84F2C7E2078CB2B00F3CD27 /* HighscorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C792078CB2B00F3CD27 /* HighscorsViewController.swift */; };
 		D84F2C7F2078CB2B00F3CD27 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C7A2078CB2B00F3CD27 /* LevelViewController.swift */; };
 		D84F2C802078CB2B00F3CD27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */; };
-		D84F2C812078CB2B00F3CD27 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C7C2078CB2B00F3CD27 /* HelpViewController.swift */; };
 		D84F2C842078D10300F3CD27 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C832078D10300F3CD27 /* Extentions.swift */; };
 		D84F2C872078FE6D00F3CD27 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C862078FE6D00F3CD27 /* GameLogic.swift */; };
 		D84F2C892078FE7E00F3CD27 /* Highscores.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2C882078FE7E00F3CD27 /* Highscores.swift */; };
@@ -79,7 +78,6 @@
 		D84F2C792078CB2B00F3CD27 /* HighscorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscorsViewController.swift; sourceTree = "<group>"; };
 		D84F2C7A2078CB2B00F3CD27 /* LevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
 		D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		D84F2C7C2078CB2B00F3CD27 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D84F2C832078D10300F3CD27 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		D84F2C862078FE6D00F3CD27 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		D84F2C882078FE7E00F3CD27 /* Highscores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highscores.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			children = (
 				D84F2C782078CB2A00F3CD27 /* AboutViewController.swift */,
 				D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */,
-				D84F2C7C2078CB2B00F3CD27 /* HelpViewController.swift */,
 				D84F2C792078CB2B00F3CD27 /* HighscorsViewController.swift */,
 				D84F2C7A2078CB2B00F3CD27 /* LevelViewController.swift */,
 				D84F2C302075631400F3CD27 /* StartViewController.swift */,
@@ -380,7 +377,6 @@
 				D84F2C8B2078FE9700F3CD27 /* Cell.swift in Sources */,
 				D84F2C7F2078CB2B00F3CD27 /* LevelViewController.swift in Sources */,
 				D84F2C892078FE7E00F3CD27 /* Highscores.swift in Sources */,
-				D84F2C812078CB2B00F3CD27 /* HelpViewController.swift in Sources */,
 				D84F2C802078CB2B00F3CD27 /* GameViewController.swift in Sources */,
 				D84F2C7D2078CB2B00F3CD27 /* AboutViewController.swift in Sources */,
 				D84F2C62207563AD00F3CD27 /* MainViewController.swift in Sources */,
@@ -551,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6LNKYSXBWX;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "memory-game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ViOs.memory-game";
@@ -566,7 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6LNKYSXBWX;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "memory-game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ViOs.memory-game";

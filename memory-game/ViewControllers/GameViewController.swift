@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 enum Level: Int {
     case Easy = 3 , Medium = 4, Hard = 5
@@ -78,9 +79,9 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         notPaused = true
     }
     
-    func resetGame() {
+    func resetGame(){
         gameCnt.stopGame()
-        if timer?.isValid == true {
+        if timer?.isValid == true{
             timer?.invalidate()
             timer = nil
         }
@@ -98,6 +99,56 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func resumeGame() {
         gameCnt.resumeGame()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    // save the results to core data
+    func saveResults(name:String)
+    {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+//        var HighScore : NSEntityDescription!
+//        var temp : NSManagedObjectContext!
+////        let highgScore =
+//        var newUser: Highscores!
+//       let newUser = NSEntityDescription.entity(forEntityName: "User_High_score", in: context)
+//       let finalScore = Highscores(entity: newUser!,insertInto: context)
+//       finalScore.name = name
+//       finalScore.level =  String(self.level.rawValue)
+//       finalScore
+        let entityName = "User_High_score"
+        let uuid = UUID().uuidString
+        let newUser = NSEntityDescription.insertNewObject(forEntityName: entityName , into: context)
+        newUser.setValue(name, forKey: "name")
+        newUser.setValue(self.level.rawValue, forKey: "level")
+        newUser.setValue(uuid, forKey: "id")
+        newUser.setValue(self.clicks, forKey: "score")
+        
+        do {
+            try context.save()
+            print ("SAVED")
+        } catch {
+            print("Failed saving")
+        }
+        
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName )
+        //request.predicate = NSPredicate(format: "age = %@", "12")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                print(data.value(forKey: "name") as! String)
+                print(data.value(forKey: "id") as! String)
+                
+            }
+            
+        } catch {
+            
+            print("Failed")
+        }
+       
+        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -165,7 +216,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let saveScore = UIAlertAction(title: NSLocalizedString("OK", comment: "Ok"), style: .default) { [weak self] (_) in
             let nameTxt = endGameAlert.textFields![0] as UITextField
-            //  TODO: save name
+           // print(nameTxt)
+            self?.saveResults(name: nameTxt.text!)
             self?.resetGame()
         }
         saveScore.isEnabled = false
