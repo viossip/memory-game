@@ -34,6 +34,7 @@
 		D84F2C91207E351200F3CD27 /* bgMem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C90207E351200F3CD27 /* bgMem.jpg */; };
 		D84F2C93207E368400F3CD27 /* bgMem2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C92207E368400F3CD27 /* bgMem2.jpg */; };
 		D84F2C95207E95C300F3CD27 /* btnYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = D84F2C94207E95C300F3CD27 /* btnYellow.png */; };
+		D8751ECA20C96539002F7B5A /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8751EC920C96539002F7B5A /* CustomizeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		D84F2C90207E351200F3CD27 /* bgMem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgMem.jpg; sourceTree = "<group>"; };
 		D84F2C92207E368400F3CD27 /* bgMem2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgMem2.jpg; sourceTree = "<group>"; };
 		D84F2C94207E95C300F3CD27 /* btnYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnYellow.png; sourceTree = "<group>"; };
+		D8751EC920C96539002F7B5A /* CustomizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		D84F2C602075632D00F3CD27 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D8751EC920C96539002F7B5A /* CustomizeViewController.swift */,
 				D84F2C782078CB2A00F3CD27 /* AboutViewController.swift */,
 				D84F2C7B2078CB2B00F3CD27 /* GameViewController.swift */,
 				D84F2C792078CB2B00F3CD27 /* HighscorsViewController.swift */,
@@ -375,6 +378,7 @@
 				D84F2C842078D10300F3CD27 /* Extentions.swift in Sources */,
 				D84F2C2F2075631400F3CD27 /* AppDelegate.swift in Sources */,
 				D84F2C8B2078FE9700F3CD27 /* Cell.swift in Sources */,
+				D8751ECA20C96539002F7B5A /* CustomizeViewController.swift in Sources */,
 				D84F2C7F2078CB2B00F3CD27 /* LevelViewController.swift in Sources */,
 				D84F2C892078FE7E00F3CD27 /* Highscores.swift in Sources */,
 				D84F2C802078CB2B00F3CD27 /* GameViewController.swift in Sources */,
