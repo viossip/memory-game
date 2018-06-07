@@ -123,10 +123,11 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         newUser.setValue(uuid, forKey: "id")
         newUser.setValue(self.clicks, forKey: "score")
         
-        do {
+        do
+        {
             try context.save()
             print ("SAVED")
-        } catch {
+        } catch{
             print("Failed saving")
         }
         
@@ -136,8 +137,12 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         request.returnsObjectsAsFaults = false
         
         do {
+            
+            
             let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
+            for data in result as! [NSManagedObject]
+                
+            {
                 print(data.value(forKey: "name") as! String)
                 print(data.value(forKey: "id") as! String)
                 
@@ -147,7 +152,6 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             print("Failed")
         }
-       
         
     }
     

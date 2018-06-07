@@ -23,6 +23,8 @@ class HighscorsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         	
     }
 
