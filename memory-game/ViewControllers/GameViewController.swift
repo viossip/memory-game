@@ -14,6 +14,7 @@ enum Level: Int {
 }
 
 enum ButtonID: String {
+    
     case ButtonEnd = "endGame"
     case ButtonNew = "newGame"
     case ButtonStart = "startGame"
@@ -27,11 +28,13 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var clicksLbl: UILabel!
     @IBOutlet weak var newGameBtn: UIButton!
     
+    var database = MainViewController()
     var nameStr = "";
     var level = Level.Easy
     var gameCnt = GameLogic()
     var initGame = true
     var notPaused = true
+//    var context1 : NSManagedObjectContext!
     
     var timer:Timer?
     var seconds = 0
@@ -105,7 +108,23 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func saveResults(name:String)
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+        let context1 = appDelegate.persistentContainer.viewContext
+//        context1 = database.context
+        let entityName = "User_High_score"
+        let uuid = UUID().uuidString
+        let myLevel = String(level.rawValue)
+        let time = String(gameCnt.elapsedTime)
+        let score = String (self.clicks)
+            //        let highScore = Highscores(insertInto: context,id: uuid,name: name,myLevel : myLevel,score: String(clicks) ,time: time,entityName: entityName)
+            //        highScore.addNewUser()
+            
+        let newUser = NSEntityDescription.insertNewObject(forEntityName: entityName , into: context1)
+        newUser.setValue(name, forKey: "name")
+        newUser.setValue(myLevel, forKey: "level")
+        newUser.setValue(uuid, forKey: "id")
+        newUser.setValue(score, forKey: "score")
+        newUser.setValue(time, forKey: "time")
+   
 //        var HighScore : NSEntityDescription!
 //        var temp : NSManagedObjectContext!
 ////        let highgScore =
@@ -115,43 +134,38 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
 //       finalScore.name = name
 //       finalScore.level =  String(self.level.rawValue)
 //       finalScore
-        let entityName = "User_High_score"
-        let uuid = UUID().uuidString
-        let newUser = NSEntityDescription.insertNewObject(forEntityName: entityName , into: context)
-        newUser.setValue(name, forKey: "name")
-        newUser.setValue(self.level.rawValue, forKey: "level")
-        newUser.setValue(uuid, forKey: "id")
-        newUser.setValue(self.clicks, forKey: "score")
+        
+        
         
         do
         {
-            try context.save()
+            try context1.save()
             print ("SAVED")
         } catch{
             print("Failed saving")
         }
-        
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName )
-        //request.predicate = NSPredicate(format: "age = %@", "12")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            
-            
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject]
-                
-            {
-                print(data.value(forKey: "name") as! String)
-                print(data.value(forKey: "id") as! String)
-                
-            }
-            
-        } catch {
-            
-            print("Failed")
-        }
+
+//
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName )
+//        //request.predicate = NSPredicate(format: "age = %@", "12")
+//        request.returnsObjectsAsFaults = false
+//
+//        do {
+//
+//
+//            let result = try context.fetch(request)
+//            for data in result as! [NSManagedObject]
+//
+//            {
+//                print(data.value(forKey: "name") as! String)
+//                print(data.value(forKey: "id") as! String)
+//
+//            }
+//
+//        } catch {
+//
+//            print("Failed")
+//        }
         
     }
     

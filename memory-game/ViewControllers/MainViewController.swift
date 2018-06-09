@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
+    
+    var appDelegate : AppDelegate!
+    var context : NSManagedObjectContext!
     
     enum ButtonID: String {
         case ButtonStartGame = "startGame"
@@ -24,6 +28,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//         appDelegate = UIApplication.shared.delegate as! AppDelegate
+//         context = appDelegate.persistentContainer.viewContext
 
         nameLbl.text! += nameStr + "!"
         for view in self.view.subviews as [UIView] {
