@@ -3,21 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GameLogic.resumeGame():GameLogic.swift">
+         contextName = "GameViewController.collectionView(_:numberOfItemsInSection:):GameViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "totalPaused">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GameViewController.buttonPressed(_:):GameViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "gameCnt.isPlaying">
-            </PersistentString>
-            <PersistentString
-               value = "self.notPaused">
+               value = "4 * level.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -25,24 +14,16 @@
          contextName = "GameLogic.finishGame():GameLogic.swift">
          <PersistentStrings>
             <PersistentString
-               value = "elapsedTime">
+               value = "elapsedTime - totalPaused">
             </PersistentString>
             <PersistentString
-               value = "elapsedTime - totalPaused">
+               value = "elapsedTime">
             </PersistentString>
             <PersistentString
                value = "elapsedTime.addingProduct(elapsedTime, -totalPaused)">
             </PersistentString>
             <PersistentString
                value = "totalPaused">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CustomizeViewController.tableView(_:cellForRowAt:):CustomizeViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "img.image">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -58,10 +39,37 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameViewController.collectionView(_:numberOfItemsInSection:):GameViewController.swift">
+         contextName = "HighscorsViewController.viewDidLoad():HighscorsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "4 * level.rawValue">
+               value = "someInts">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameViewController.buttonPressed(_:):GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gameCnt.isPlaying">
+            </PersistentString>
+            <PersistentString
+               value = "self.notPaused">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameLogic.resumeGame():GameLogic.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "totalPaused">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CustomizeViewController.tableView(_:cellForRowAt:):CustomizeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "img.image">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

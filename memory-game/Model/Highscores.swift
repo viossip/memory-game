@@ -8,19 +8,15 @@
 import CoreData
 import Foundation
 
-
 class Highscores {
-     var contextLocal : NSManagedObjectContext!
-     var id: String!
-     var name: String!
-     var myLevel :String!
-     var score: String!
-     var time: String!
-//     var someInts = [Highscores]()
+    var contextLocal : NSManagedObjectContext!
+    var id: String!
+    var name: String!
+    var myLevel :String!
+    var score: String!
+    var time: String!
     var entityName :String!
     
-   
-
     init(insertInto contextLocal: NSManagedObjectContext?,id : String,name : String,myLevel : String,score: String,time : String,entityName:String) {
         self.contextLocal = contextLocal
         self.id = id
@@ -29,8 +25,9 @@ class Highscores {
         self.score = score
         self.time = time
         self.entityName = entityName
-
     }
+    
+    public var description: String { return "+++HighScore: \(self.name)" }
 //
 //    func addNewUser()
 //    {
