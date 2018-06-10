@@ -13,15 +13,15 @@ class Highscores {
      var contextLocal : NSManagedObjectContext!
      var id: String!
      var name: String!
-     var myLevel :Int!
+     var myLevel :String!
      var score: String!
-     var time: Int!
+     var time: String!
 //     var someInts = [Highscores]()
     var entityName :String!
     
    
 
-    init(insertInto contextLocal: NSManagedObjectContext?,id : String,name : String,myLevel : Int,score: String,time : Int,entityName:String) {
+    init(insertInto contextLocal: NSManagedObjectContext?,id : String,name : String,myLevel : String,score: String,time : String,entityName:String) {
         self.contextLocal = contextLocal
         self.id = id
         self.name = name

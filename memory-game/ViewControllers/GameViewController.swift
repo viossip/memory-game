@@ -34,7 +34,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     var gameCnt = GameLogic()
     var initGame = true
     var notPaused = true
-//    var context1 : NSManagedObjectContext!
+    var context1 : NSManagedObjectContext!
     
     var timer:Timer?
     var seconds = 0
@@ -109,7 +109,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context1 = appDelegate.persistentContainer.viewContext
-//        context1 = database.context
+//        let context1 = database.context
         let entityName = "User_High_score"
         let uuid = UUID().uuidString
         let myLevel = String(level.rawValue)

@@ -15,7 +15,7 @@ class HighscorsViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet weak var table2: UITableView!
     
     var someInts : [Highscores] = []
-    var database = GameViewController()
+//    var database = MainViewController()
     
 //    public override  NumberOfSections (UITableView tableView)
 //{
@@ -29,7 +29,8 @@ class HighscorsViewController: UIViewController,UITableViewDelegate,UITableViewD
         table2.delegate = self
         table2.dataSource = self
         let entityName = "User_High_score"
-        let context1 = database.context1
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context1 = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName )
         //request.predicate = NSPredicate(format: "age = %@", "12")
 
@@ -38,7 +39,7 @@ class HighscorsViewController: UIViewController,UITableViewDelegate,UITableViewD
         do {
 
 
-            let result = try context1!.fetch(request)
+            let result = try context1.fetch(request)
             if result.count>0
             {
                 for data in result as! [NSManagedObject]
@@ -48,7 +49,7 @@ class HighscorsViewController: UIViewController,UITableViewDelegate,UITableViewD
                     let level = data.value(forKey: "level")
                     let score = data.value(forKey: "score")
                     let time = data.value(forKey: "time")
-                    var tempClass = Highscores(insertInto :context1,id:id as! String,name:name as! String,myLevel:level as! Int,score:score as! String,time:time as! Int,entityName:entityName)
+                    var tempClass = Highscores(insertInto :context1,id:id as! String,name:name as! String,myLevel:level as! String ,score:score as! String,time:time as! String,entityName:entityName)
                     someInts.append(tempClass)
                     someInts = someInts.sorted(by: { $0.score < $1.score })
                     

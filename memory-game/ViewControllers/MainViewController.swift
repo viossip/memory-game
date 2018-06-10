@@ -11,8 +11,8 @@ import CoreData
 
 class MainViewController: UIViewController {
     
-    var appDelegate : AppDelegate!
-    var context : NSManagedObjectContext!
+//    var appDelegate : AppDelegate!
+//    var context : NSManagedObjectContext!
     
     enum ButtonID: String {
         case ButtonStartGame = "startGame"
