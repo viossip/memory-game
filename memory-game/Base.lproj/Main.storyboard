@@ -437,7 +437,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="easy" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INi-Sl-TXQ">
-                                <rect key="frame" x="67" y="193" width="65" height="30"/>
+                                <rect key="frame" x="50" y="193" width="65" height="30"/>
                                 <state key="normal" title="Easy" backgroundImage="buttonGreen.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="medium" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YT-dD-ZO3">
@@ -457,7 +457,7 @@
                             <constraint firstItem="NzO-Gd-pDG" firstAttribute="leading" secondItem="Tce-ba-UPf" secondAttribute="leading" id="ACL-ZL-WIg"/>
                             <constraint firstItem="cHE-W0-AiT" firstAttribute="centerX" secondItem="NzO-Gd-pDG" secondAttribute="centerX" id="Emu-Kb-DUh"/>
                             <constraint firstItem="Eyb-Ww-uIY" firstAttribute="centerX" secondItem="NzO-Gd-pDG" secondAttribute="centerX" id="GnD-Ad-HaC"/>
-                            <constraint firstItem="INi-Sl-TXQ" firstAttribute="leading" secondItem="cbH-M7-Zr6" secondAttribute="leading" constant="67" id="GuK-hN-ePS"/>
+                            <constraint firstItem="INi-Sl-TXQ" firstAttribute="leading" secondItem="cbH-M7-Zr6" secondAttribute="leading" constant="50" id="GuK-hN-ePS"/>
                             <constraint firstItem="SgP-BH-kPo" firstAttribute="width" secondItem="9YT-dD-ZO3" secondAttribute="width" id="INC-wF-XSk"/>
                             <constraint firstItem="INi-Sl-TXQ" firstAttribute="height" secondItem="9YT-dD-ZO3" secondAttribute="height" constant="-1" id="MAT-uH-q7r"/>
                             <constraint firstItem="cbH-M7-Zr6" firstAttribute="trailing" secondItem="SgP-BH-kPo" secondAttribute="trailing" constant="55" id="Mpa-2N-YM3"/>

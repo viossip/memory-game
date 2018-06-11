@@ -77,7 +77,7 @@ class HighscorsViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style:UITableViewCellStyle.default,reuseIdentifier:"cell")
         
-        let formatted = String(format: "%@ : %@",recordsToDisplay[indexPath.row].name, recordsToDisplay[indexPath.row].score)
+        let formatted = String(format: "   %@ : %@",recordsToDisplay[indexPath.row].name, recordsToDisplay[indexPath.row].score)
         cell.textLabel?.text = formatted
 
         return cell

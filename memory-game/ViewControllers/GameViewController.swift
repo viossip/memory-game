@@ -109,33 +109,18 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context1 = appDelegate.persistentContainer.viewContext
-//        let context1 = database.context
         let entityName = "User_High_score"
         let uuid = UUID().uuidString
         let myLevel = String(level.rawValue)
         let time = String(gameCnt.elapsedTime)
         let score = String (self.clicks)
-            //        let highScore = Highscores(insertInto: context,id: uuid,name: name,myLevel : myLevel,score: String(clicks) ,time: time,entityName: entityName)
-            //        highScore.addNewUser()
-            
         let newUser = NSEntityDescription.insertNewObject(forEntityName: entityName , into: context1)
+        
         newUser.setValue(name, forKey: "name")
         newUser.setValue(myLevel, forKey: "level")
         newUser.setValue(uuid, forKey: "id")
         newUser.setValue(score, forKey: "score")
         newUser.setValue(time, forKey: "time")
-   
-//        var HighScore : NSEntityDescription!
-//        var temp : NSManagedObjectContext!
-////        let highgScore =
-//        var newUser: Highscores!
-//       let newUser = NSEntityDescription.entity(forEntityName: "User_High_score", in: context)
-//       let finalScore = Highscores(entity: newUser!,insertInto: context)
-//       finalScore.name = name
-//       finalScore.level =  String(self.level.rawValue)
-//       finalScore
-        
-        
         
         do
         {
@@ -144,29 +129,6 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         } catch{
             print("Failed saving")
         }
-
-//
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName )
-//        //request.predicate = NSPredicate(format: "age = %@", "12")
-//        request.returnsObjectsAsFaults = false
-//
-//        do {
-//
-//
-//            let result = try context.fetch(request)
-//            for data in result as! [NSManagedObject]
-//
-//            {
-//                print(data.value(forKey: "name") as! String)
-//                print(data.value(forKey: "id") as! String)
-//
-//            }
-//
-//        } catch {
-//
-//            print("Failed")
-//        }
-        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -234,7 +196,6 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let saveScore = UIAlertAction(title: NSLocalizedString("OK", comment: "Ok"), style: .default) { [weak self] (_) in
             let nameTxt = endGameAlert.textFields![0] as UITextField
-           // print(nameTxt)
             self?.saveResults(name: nameTxt.text!)
             self?.resetGame()
         }
@@ -303,8 +264,6 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         exitGameAlert.addAction(cancelExit)
         self.present(exitGameAlert, animated: true) { }
-        //dismiss(animated: true, completion: nil)
-        //self.dismiss(animated: true, completion: nil)
     }
     
     @objc func buttonPressed(_ button: UIButton) {

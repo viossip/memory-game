@@ -140,6 +140,7 @@ class CustomizeViewController: UITableViewController, UIImagePickerControllerDel
     private func changeCell(_ index: Int, image: UIImage) {
         cells[index] = image
         GameLogic.defaultCellImages[index] = image
+        //tableView.reloadData()
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 }
